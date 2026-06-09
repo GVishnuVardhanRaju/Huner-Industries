@@ -26,7 +26,7 @@ const aiCategoryHero: Record<string, string> = {
 
 // Eagerly resolve every per-firearm AI image into a URL map keyed by firearm id.
 // Vite bundles only files that exist, so this grows automatically as images are added.
-const modelModules = import.meta.glob("@/assets/firearms/models/*.jpg", {
+const modelModules = import.meta.glob("../assets/firearms/models/*.jpg", {
   eager: true,
   query: "?url",
   import: "default",

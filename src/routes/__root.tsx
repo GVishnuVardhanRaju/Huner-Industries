@@ -3,11 +3,8 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
 
-import appCss from "../styles.css?url";
 import appFavicon from "../../favicon/favicon.svg?url";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -43,10 +40,17 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <p className="mt-2 text-sm text-muted-foreground">Something went wrong.</p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
             className="rounded-md bg-primary px-4 py-2 text-sm font-medium uppercase tracking-wider text-primary-foreground hover:bg-primary/90"
-          >Try again</button>
-          <a href="/" className="rounded-md border border-border px-4 py-2 text-sm font-medium uppercase tracking-wider hover:bg-secondary">Home</a>
+          >
+            Try again
+          </button>
+          <a href="/" className="rounded-md border border-border px-4 py-2 text-sm font-medium uppercase tracking-wider hover:bg-secondary">
+            Home
+          </a>
         </div>
       </div>
     </div>
@@ -65,30 +69,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
     ],
     links: [
-      { rel: "stylesheet", href: appCss },
       { rel: "icon", href: appFavicon, type: "image/svg+xml" },
       { rel: "shortcut icon", href: appFavicon },
     ],
   }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -104,3 +92,4 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
+

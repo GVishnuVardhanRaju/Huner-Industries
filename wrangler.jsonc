@@ -1,7 +1,12 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "tanstack-start-app",
+  "name": "huner-industries",
   "compatibility_date": "2025-09-24",
   "compatibility_flags": ["nodejs_compat"],
-  "main": "src/server.ts",
+  // Note: This is a static SPA. For Cloudflare Pages deployment:
+  // 1. Build command: npm run build
+  // 2. Output directory: dist
+  // 3. Root directory: / (default)
+  // The static assets in dist/ will be served as a static site.
 }
+
