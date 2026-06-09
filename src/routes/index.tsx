@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { imageFallbackHandler, getFirearmImage } from "@/utils/firearmImage";
 import { motion } from "framer-motion";
@@ -17,8 +18,21 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  const [heroVideoSrc, setHeroVideoSrc] = useState(() =>
+    typeof window !== "undefined" && window.innerWidth <= 640 ? "/heromobile.mp4" : "/hero.mp4"
+  );
   const featured = firearms.slice(0, 6);
   const ofTheDay = firearms[new Date().getDate() % firearms.length];
+
+  useEffect(() => {
+    const updateVideoSrc = () => {
+      setHeroVideoSrc(window.innerWidth <= 640 ? "/heromobile.mp4" : "/hero.mp4");
+    };
+
+    updateVideoSrc();
+    window.addEventListener("resize", updateVideoSrc);
+    return () => window.removeEventListener("resize", updateVideoSrc);
+  }, []);
 
   return (
     <div>
@@ -27,14 +41,15 @@ function Home() {
         {/* Background video — local file is preferred, remote sample fallback is provided. */}
         <video
           className="absolute inset-0 -z-10 h-full w-full object-cover pointer-events-none"
+          style={{ objectPosition: "center center" }}
           autoPlay
           muted
           loop
           playsInline
           poster="/hero-poster.svg"
+          key={heroVideoSrc}
         >
-          <source media="(max-width: 640px)" src="/heromobile.mp4" type="video/mp4" />
-          <source src="/hero.mp4" type="video/mp4" />
+          <source src={heroVideoSrc} type="video/mp4" />
           <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
           <source src="https://storage.googleapis.com/media-session/elephants-dream/the-wires.webm" type="video/webm" />
         </video>
