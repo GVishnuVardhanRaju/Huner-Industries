@@ -33,6 +33,7 @@ function Home() {
           playsInline
           poster="/hero-poster.svg"
         >
+          <source media="(max-width: 640px)" src="/heromobile.mp4" type="video/mp4" />
           <source src="/hero.mp4" type="video/mp4" />
           <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
           <source src="https://storage.googleapis.com/media-session/elephants-dream/the-wires.webm" type="video/webm" />
