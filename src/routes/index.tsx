@@ -89,9 +89,9 @@ function Home() {
             transition={{ delay: 0.3 }}
             className="mt-6 mx-auto max-w-3xl text-base sm:text-xl md:text-2xl text-white/90 font-medium leading-relaxed"
           >
-            Global Firearms Encyclopedia & Licensed Dealer Information.
+            Global Firearms Encyclopedia & Historical Reference Archive
             <br />
-            A premium educational archive of historical and modern firearms from around the world.
+            An educational and historical reference archive documenting notable firearms, manufacturers, and their historical development.
           </motion.p>
 
           <motion.div

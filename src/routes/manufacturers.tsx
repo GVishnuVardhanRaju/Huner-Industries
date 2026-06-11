@@ -22,7 +22,7 @@ function Manufacturers() {
         <span className="text-[10px] uppercase tracking-[0.3em] text-brass">Industry</span>
         <h1 className="mt-2 font-display text-4xl md:text-5xl uppercase">Manufacturers</h1>
         <p className="mt-2 text-sm text-muted-foreground max-w-2xl">
-          Profiles of the most influential firearms manufacturers in history.
+          Historical profiles of notable firearms manufacturers and their contributions to firearms development.
         </p>
       </header>
 

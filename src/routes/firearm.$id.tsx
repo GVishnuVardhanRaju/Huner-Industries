@@ -63,7 +63,7 @@ function FirearmDetail() {
 
           <div className="mt-6 inline-flex items-center gap-2 rounded-md border border-accent/40 bg-accent/10 px-3 py-2">
             <Shield className="h-4 w-4 text-accent" />
-            <span className="text-xs text-accent-foreground">Available via licensed offline dealers only</span>
+            <span className="text-xs text-accent-foreground">Educational & Historical Reference Only</span>
           </div>
         </motion.div>
       </div>
