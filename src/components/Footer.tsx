@@ -52,12 +52,12 @@ export function Footer() {
       </div>
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-5 text-xs text-muted-foreground">
-          <p className="mb-4">
+          <p className="mb-4 max-w-5xl mx-auto text-center md:text-left">
             <strong>Educational Use Only</strong> — Huner Industries is a historical and educational reference archive documenting firearms, manufacturers, and their historical development. No firearms, ammunition, parts, accessories, or related services are sold, advertised, brokered, transferred, or facilitated through this platform. Users are responsible for complying with all applicable laws and regulations in their jurisdiction.
           </p>
         </div>
         <div className="border-t border-border">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-muted-foreground">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-muted-foreground text-center md:text-left">
             <p>© {new Date().getFullYear()} Huner Industries — A fictional informational archive.</p>
             <p className="uppercase tracking-[0.2em]">Educational use only</p>
           </div>
