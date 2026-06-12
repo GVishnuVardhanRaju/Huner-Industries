@@ -62,7 +62,7 @@ export function Footer() {
             <p className="uppercase tracking-[0.2em]">Educational use only</p>
           </div>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 pb-5 pt-3 text-xs text-muted-foreground text-center">
-            Built By G VISHNU VARDHAN RAJU
+            Designed & Built By G VISHNU VARDHAN RAJU
           </div>
         </div>
       </div>
